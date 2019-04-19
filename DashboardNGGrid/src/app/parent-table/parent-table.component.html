@@ -1,0 +1,20 @@
+<p-table [value]="insuranceDataValue" selectionMode="single" [(selection)]="selectedData" (onRowSelect)="onRowSelect($event)">
+  <table>
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of insuranceDataHeaders">
+          {{col}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-insuranceDataValue>
+      <tr [pSelectableRowDblClick]="insuranceDataValue">
+        <td *ngFor="let col of insuranceDataValue">
+          {{col}}
+        </td>
+      </tr>
+    </ng-template>
+  </table>
+</p-table>
+
+<app-child-table></app-child-table>
